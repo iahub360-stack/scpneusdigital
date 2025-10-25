@@ -1,0 +1,62 @@
+{
+  "name": "SC PNEUS Distribuidora - BFGoodrich",
+  "short_name": "SCPNEUS",
+  "description": "Distribuidora autorizada BFGoodrich especializada em pneus off-road",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e40af",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt-BR",
+  "categories": ["shopping", "automotive", "business"],
+  "icons": [
+    {
+      "src": "/images/logo-sc-pneus-oficial.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo-sc-pneus-oficial.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/hero/hero-ko3-desert.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "SC PNEUS - Pneus BFGoodrich Off-Road"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ver Produtos",
+      "short_name": "Produtos",
+      "description": "Navegar para catálogo de produtos",
+      "url": "/#produtos",
+      "icons": [
+        {
+          "src": "/images/logo-sc-pneus-oficial.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contato WhatsApp",
+      "short_name": "WhatsApp",
+      "description": "Fale conosco pelo WhatsApp",
+      "url": "https://wa.me/554934361447",
+      "icons": [
+        {
+          "src": "/images/logo-sc-pneus-oficial.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+# Robots.txt - SC PNEUS Distribuidora
+# https://distribuidora.scpneus.shop
+
+User-agent: *
+Allow: /
+
+# Priorizar páginas importantes
+Allow: /api/products
+Allow: /images/
+Allow: /_next/static/
+
+# Bloquear páginas de admin/config
+Disallow: /api/admin/
+Disallow: /admin/
+Disallow: /api/webhook/
+
+# Sitemap
+Sitemap: https://distribuidora.scpneus.shop/sitemap.xml
+
+# Tempo de crawl (1 segundo)
+Crawl-delay: 1
+
+# Especificar para crawlers específicos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
