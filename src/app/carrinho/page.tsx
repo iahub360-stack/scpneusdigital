@@ -98,7 +98,7 @@ export default function CartPage() {
     /* --- BLOCO DE VALIDAÇÃO DESATIVADO TEMPORARIAMENTE ---
     if (!couponCode.trim()) {
       setToastMessage({
-        type: 'error',
+        variant: 'destructive',
         title: 'Cupom Inválido',
         message: 'Por favor, digite um código de cupom.'
       })
@@ -128,7 +128,7 @@ export default function CartPage() {
         default:
           /* --- BLOCO DE VALIDAÇÃO DESATIVADO TEMPORARIAMENTE ---
           setToastMessage({
-            type: 'error',
+            variant: 'destructive',
             title: 'Cupom Inválido',
             message: 'Este cupom não é válido ou expirou.'
           })
@@ -149,7 +149,7 @@ export default function CartPage() {
       
     } catch (error) {
       setToastMessage({
-        type: 'error',
+        variant: 'destructive',
         title: 'Erro no Cupom',
         message: 'Não foi possível validar o cupom. Tente novamente.'
       })
@@ -202,7 +202,7 @@ export default function CartPage() {
   const handleCheckout = async () => {
     if (!selectedShipping) {
       setToastMessage({
-        type: 'error',
+        variant: 'destructive',
         title: 'Frete Não Selecionado',
         message: 'Por favor, selecione uma opção de frete antes de finalizar a compra.'
       })
@@ -263,7 +263,7 @@ export default function CartPage() {
     } catch (error) {
       console.error('Erro no checkout:', error)
       setToastMessage({
-        type: 'error',
+        variant: 'destructive',
         title: 'Erro no Pagamento',
         message: 'Não foi possível processar seu pagamento. Tente novamente.'
       })
