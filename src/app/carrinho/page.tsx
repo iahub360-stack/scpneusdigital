@@ -126,11 +126,13 @@ export default function CartPage() {
           discountAmount = totalPrice * 0.20 // 20% de desconto
           break
         default:
+          /* --- BLOCO DE VALIDAÇÃO DESATIVADO TEMPORARIAMENTE ---
           setToastMessage({
             type: 'error',
             title: 'Cupom Inválido',
             message: 'Este cupom não é válido ou expirou.'
           })
+          --- FIM DO BLOCO DESATIVADO --- */  
           setShowToast(true)
           setCouponLoading(false)
           return
