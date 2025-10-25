@@ -30,13 +30,13 @@ interface OrderData {
     email: string
     cpfCnpj: string
   }
-  shipping: string
+  shippingMethod: string
   pickupDate?: Date
   pickupTime?: string
   coupon: string
   subtotal: number
   discount: number
-  shipping: number
+  shippingCost: number
   total: number
 }
 
@@ -102,7 +102,7 @@ export default function CheckoutPage() {
   const getShippingDescription = () => {
     if (!orderData) return ''
     
-    if (orderData.shipping === 'pickup') {
+    if (orderData.shippingMethod === 'pickup') {
       return `Retirar na loja - ${format(orderData.pickupDate!, "dd 'de' MMMM 'às' HH:mm", { locale: ptBR })}`
     }
     
@@ -118,7 +118,7 @@ export default function CheckoutPage() {
       'proprio': 'Transporte Próprio - 4 dias úteis'
     }
     
-    return shippingOptions[orderData.shipping as keyof typeof shippingOptions] || 'Entrega padrão'
+    return shippingOptions[orderData.shippingMethod as keyof typeof shippingOptions] || 'Entrega padrão'
   }
 
   if (!orderData) {
@@ -192,17 +192,17 @@ export default function CheckoutPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  {orderData.shipping === 'pickup' ? <Store className="h-5 w-5" /> : <Truck className="h-5 w-5" />}
+                  {orderData.shippingMethod === 'pickup' ? <Store className="h-5 w-5" /> : <Truck className="h-5 w-5" />}
                   Informações de Entrega
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="p-4 bg-gray-50 rounded-lg">
                   <p className="font-medium text-gray-900 mb-2">
-                    {orderData.shipping === 'pickup' ? 'Retirada na Loja' : 'Endereço de Entrega'}
+                    {orderData.shippingMethod === 'pickup' ? 'Retirada na Loja' : 'Endereço de Entrega'}
                   </p>
                   
-                  {orderData.shipping === 'pickup' ? (
+                  {orderData.shippingMethod === 'pickup' ? (
                     <div className="space-y-2">
                       <p className="text-sm text-gray-600">
                         <strong>Data:</strong> {format(orderData.pickupDate!, "dd 'de' MMMM 'de' yyyy", { locale: ptBR })}
@@ -343,7 +343,7 @@ export default function CheckoutPage() {
                   <div className="flex justify-between">
                     <span>Frete</span>
                     <span>
-                      {orderData.shipping === 0 ? 'Grátis' : formatCurrency(orderData.shipping)}
+                      {orderData.shippingCost === 0 ? 'Grátis' : formatCurrency(orderData.shippingCost)}
                     </span>
                   </div>
                   

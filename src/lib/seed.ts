@@ -5,6 +5,7 @@ const products = [
   {
     id: "bfg-ko3-265-65-17",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-265-65R17-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "265/65R17",
@@ -17,6 +18,7 @@ const products = [
   {
     id: "bfg-ko3-285-70-17",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-285-70R17-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "285/70R17",
@@ -29,6 +31,7 @@ const products = [
   {
     id: "bfg-ko3-265-70-17",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-265-70R17-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "265/70R17",
@@ -41,6 +44,7 @@ const products = [
   {
     id: "bfg-ko3-255-75-17",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-255-75R17-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "255/75R17",
@@ -54,6 +58,7 @@ const products = [
   {
     id: "bfg-ko3-275-65-18",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-275-65R18-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "275/65R18",
@@ -66,6 +71,7 @@ const products = [
   {
     id: "bfg-ko3-265-60-18",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-265-60R18-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "265/60R18",
@@ -79,6 +85,7 @@ const products = [
   {
     id: "bfg-ko3-31x10-50-15",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-31X10-50R15-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "31x10.50R15",
@@ -91,6 +98,7 @@ const products = [
   {
     id: "bfg-ko3-33x12-50-15",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-33X12-50R15-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "33x12.50R15",
@@ -104,6 +112,7 @@ const products = [
   {
     id: "bfg-ko3-265-75-16",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-265-75R16-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "265/75R16",
@@ -116,6 +125,7 @@ const products = [
   {
     id: "bfg-ko3-285-75-16",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-285-75R16-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "285/75R16",
@@ -129,6 +139,7 @@ const products = [
   {
     id: "bfg-ko3-275-60-20",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-275-60R20-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "275/60R20",
@@ -141,6 +152,7 @@ const products = [
   {
     id: "bfg-ko3-285-60-20",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-285-60R20-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "285/60R20",
@@ -154,6 +166,7 @@ const products = [
   {
     id: "bfg-ko3-295-70-17",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-295-70R17-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "295/70R17",
@@ -166,6 +179,7 @@ const products = [
   {
     id: "bfg-ko3-305-65-17",
     name: "BFGoodrich All-Terrain T/A KO3",
+    sku: "BFG-KO3-305-65R17-001",
     brand: "BFGoodrich",
     line: "All-Terrain T/A KO3",
     size: "305/65R17",

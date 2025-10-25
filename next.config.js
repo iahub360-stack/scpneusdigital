@@ -98,12 +98,8 @@ const nextConfig = {
   // React Strict Mode
   reactStrictMode: true,
 
-  // SWC minification
-  swcMinify: true,
-
   // Experimental features
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
 

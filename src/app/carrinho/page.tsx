@@ -59,7 +59,7 @@ export default function CartPage() {
   })
   const [isProcessing, setIsProcessing] = useState(false)
   const [showToast, setShowToast] = useState(false)
-  const [toastMessage, setToastMessage] = useState({ type: 'success' as const, title: '', message: '' })
+  const [toastMessage, setToastMessage] = useState<{ type: 'success' | 'error' | 'warning' | 'info'; title: string; message: string }>({ type: 'success', title: '', message: '' })
   
   // Estados para frete e cupom
   const [selectedShipping, setSelectedShipping] = useState<'retirada' | 'jadlog' | 'rodonaves' | null>(null)
@@ -95,17 +95,16 @@ export default function CartPage() {
 
   // Função para aplicar cupom
   const applyCoupon = async () => {
-    /* --- BLOCO DE VALIDAÇÃO DESATIVADO TEMPORARIAMENTE ---
     if (!couponCode.trim()) {
       setToastMessage({
-        variant: 'destructive',
+        type: 'error',
         title: 'Cupom Inválido',
         message: 'Por favor, digite um código de cupom.'
       })
       setShowToast(true)
       return
     }
-    --- FIM DO BLOCO DESATIVADO --- */
+
     setCouponLoading(true)
     
     try {
@@ -126,13 +125,11 @@ export default function CartPage() {
           discountAmount = totalPrice * 0.20 // 20% de desconto
           break
         default:
-          /* --- BLOCO DE VALIDAÇÃO DESATIVADO TEMPORARIAMENTE ---
           setToastMessage({
-            variant: 'destructive',
+            type: 'error',
             title: 'Cupom Inválido',
             message: 'Este cupom não é válido ou expirou.'
           })
-          --- FIM DO BLOCO DESATIVADO --- */  
           setShowToast(true)
           setCouponLoading(false)
           return
@@ -149,7 +146,7 @@ export default function CartPage() {
       
     } catch (error) {
       setToastMessage({
-        variant: 'destructive',
+        type: 'error',
         title: 'Erro no Cupom',
         message: 'Não foi possível validar o cupom. Tente novamente.'
       })
@@ -187,7 +184,7 @@ export default function CartPage() {
       setBuyerData(prev => ({
         ...prev,
         [parent]: {
-          ...prev[parent as keyof BuyerData],
+          ...(prev[parent as keyof BuyerData] as any),
           [child]: value
         }
       }))
@@ -202,7 +199,7 @@ export default function CartPage() {
   const handleCheckout = async () => {
     if (!selectedShipping) {
       setToastMessage({
-        variant: 'destructive',
+        type: 'error',
         title: 'Frete Não Selecionado',
         message: 'Por favor, selecione uma opção de frete antes de finalizar a compra.'
       })
@@ -263,7 +260,7 @@ export default function CartPage() {
     } catch (error) {
       console.error('Erro no checkout:', error)
       setToastMessage({
-        variant: 'destructive',
+        type: 'error',
         title: 'Erro no Pagamento',
         message: 'Não foi possível processar seu pagamento. Tente novamente.'
       })
