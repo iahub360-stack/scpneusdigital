@@ -95,6 +95,7 @@ export default function CartPage() {
 
   // Função para aplicar cupom
   const applyCoupon = async () => {
+    /* --- BLOCO DE VALIDAÇÃO DESATIVADO TEMPORARIAMENTE ---
     if (!couponCode.trim()) {
       setToastMessage({
         type: 'error',
@@ -104,7 +105,7 @@ export default function CartPage() {
       setShowToast(true)
       return
     }
-
+    --- FIM DO BLOCO DESATIVADO --- */
     setCouponLoading(true)
     
     try {
