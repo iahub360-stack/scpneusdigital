@@ -1,0 +1,36 @@
+# docker-compose.yml - Planta Mestra vFinal (Corrigida com Build Args)
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # --- A CORREÇÃO CRUCIAL (PARTE 2) ---
+      # Entrega a "morada" ao "construtor" (Dockerfile)
+      args:
+        - DATABASE_URL=file:/app/prisma/data/dev.db
+      # ------------------------------------
+    container_name: scpneus_frontend_app
+    restart: always
+    user: "1000:1000"
+    ports:
+      - "127.0.0.1:8084:3000"
+
+    environment:
+      # A "morada" para o "Tempo de Execução" (Runtime)
+      - DATABASE_URL=file:/app/prisma/data/dev.db
+      - MERCADO_PAGO_ACCESS_TOKEN=APP_USR-4087281846949400-102400-3f2cab4f09ed4f9e04c5a75983c610f3-2257480138
+      - NEXT_PUBLIC_MERCADO_PAGO_PUBLIC_KEY=APP_USR-4f1dd17e-5e92-43a9-b3c0-f123c87e5536
+      - NEXT_PUBLIC_SITE_URL=https://distribuidora.scpneus.shop
+      - NEXT_PUBLIC_WEBHOOK_URL=https://distribuidora.scpneus.shop/api/mercadopago/webhook
+      - NEXT_PUBLIC_AGENT_API_URL=https://atendimento.scpneus.shop
+
+    volumes:
+      - /srv/NexFlowX/data/scpneus_frontend_db:/app/prisma/data
+
+    networks:
+      - nexflowx_public_net
+
+networks:
+  nexflowx_public_net:
+    external: true

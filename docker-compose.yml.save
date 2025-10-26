@@ -1,0 +1,36 @@
+# docker-compose.yml - Planta Mestra para o SCPneus-Frontend (VPS/SQLite)
+
+services:
+  app:
+    build: .
+    container_name: scpneus_frontend_app
+    restart: always
+    user: "1000:1000" # CORREÇÃO CRÍTICA: Corre como o seu utilizador "conta"
+    ports:
+      - "127.0.0.1:8084:3000" # Porta 8084 (única) -> 3000 (padrão do Next.js)
+
+    environment:
+      # --- A Base de Dados (agora local na VPS) ---
+      - DATABASE_URL=file:/app/prisma/data/dev.db
+
+      # --- Chaves do Mercado Pago ---
+      - MERCADO_PAGO_ACCESS_TOKEN=APP_USR-4087281846949400-102400-3f2cab4f09ed4f9e04c5a75983c610f3-2257480138
+      - NEXT_PUBLIC_MERCADO_PAGO_PUBLIC_KEY=APP_USR-4f1dd17e-5e92-43a9-b3c0-f123c87e5536
+
+      # --- URLs da Aplicação (Frontend e Backend são os mesmos aqui) ---
+      - NEXT_PUBLIC_SITE_URL=https://scpneus.shop
+      - NEXT_PUBLIC_WEBHOOK_URL=https://scpneus.shop/api/mercadopago/webhook
+
+      # --- A "Morada" do nosso Agente IA ---
+      - NEXT_PUBLIC_AGENT_API_URL=https://atendimento.scpneus.shop
+
+    volumes:
+      # --- O "Armazém" Persistente (O que a Vercel não permitia) ---
+      - /srv/NexFlowX/data/scpneus_frontend_db:/app/prisma/data
+
+    networks:
+      - nexflowx_public_net
+
+networks:
+  nexflowx_public_net:
+    external: true
